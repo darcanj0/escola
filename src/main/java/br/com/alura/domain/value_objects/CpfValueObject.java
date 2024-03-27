@@ -4,6 +4,10 @@ public class CpfValueObject {
 
     private String value;
 
+    public String getValue() {
+        return value;
+    }
+
     public CpfValueObject(String value) {
         if (value == null ||
                 !value.matches("\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}")) {

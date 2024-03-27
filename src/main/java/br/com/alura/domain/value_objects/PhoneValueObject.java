@@ -2,10 +2,19 @@ package br.com.alura.domain.value_objects;
 
 public class PhoneValueObject {
     private String ddd;
+
+    public String getDdd() {
+        return ddd;
+    }
+
     private String value;
 
-    public PhoneValueObject(String ddd, String numero) {
-        if (ddd == null || numero == null) {
+    public String getValue() {
+        return value;
+    }
+
+    public PhoneValueObject(String ddd, String phone) {
+        if (ddd == null || phone == null) {
             throw new IllegalArgumentException("DDD e Numero sao obrigatorios");
         }
 
@@ -13,11 +22,11 @@ public class PhoneValueObject {
             throw new IllegalArgumentException("DDD invalido!");
         }
 
-        if (!numero.matches("\\d{8}|\\d{9}")) {
+        if (!phone.matches("\\d{8}|\\d{9}")) {
             throw new IllegalArgumentException("Numero invalido!");
         }
         this.ddd = ddd;
-        this.value = numero;
+        this.value = phone;
     }
 
     @Override

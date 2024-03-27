@@ -3,6 +3,10 @@ package br.com.alura.domain.value_objects;
 public class EmailValueObject {
     private String value;
 
+    public String getValue() {
+        return value;
+    }
+
     public EmailValueObject(String value) {
         if (value == null ||
                 !value.matches("^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]{\\\\.[a-zA-Z]{2,}$")) {
