@@ -1,7 +1,11 @@
 package br.com.alura.domain.value_objects;
 
+import java.util.regex.Pattern;
+
 public class EmailValueObject {
     private String value;
+
+    private static String regex = "^(.+)@(\\S+)$";
 
     public String getValue() {
         return value;
@@ -9,7 +13,7 @@ public class EmailValueObject {
 
     public EmailValueObject(String value) {
         if (value == null ||
-                !value.matches("^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]{\\\\.[a-zA-Z]{2,}$")) {
+                !Pattern.compile(EmailValueObject.regex).matcher(value).matches()) {
             throw new IllegalArgumentException("Ivalid E-mail!");
         }
         this.value = value;

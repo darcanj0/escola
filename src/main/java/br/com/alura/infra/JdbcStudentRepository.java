@@ -111,8 +111,7 @@ public class JdbcStudentRepository implements StudentRepository {
         }
     }
 
-    JdbcStudentRepository(Connection conn) {
-        this.conn = conn;
+    public JdbcStudentRepository() {
         this.studentFactory = new StudentFactory();
     }
 
